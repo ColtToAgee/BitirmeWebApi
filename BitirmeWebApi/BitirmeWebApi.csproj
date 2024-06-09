@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BitirmeEntity\BitirmeEntity.csproj" />
     <ProjectReference Include="..\BitirmeService\BitirmeService.csproj" />
+    <ProjectReference Include="..\HayatHospitalWorker\HayatHospitalWorker.csproj" />
   </ItemGroup>
 
 </Project>

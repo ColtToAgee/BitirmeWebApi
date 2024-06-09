@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HayatHospitalWorker", "Haya
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicanaHospitalWorker", "MedicanaHospitalWorker\MedicanaHospitalWorker.csproj", "{EAD0C721-12D5-490F-9EE4-4C58926E251A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DenemeConsole", "DenemeConsole\DenemeConsole.csproj", "{C85D633E-6FE7-4C2D-92F9-962BC440100B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{EAD0C721-12D5-490F-9EE4-4C58926E251A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAD0C721-12D5-490F-9EE4-4C58926E251A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAD0C721-12D5-490F-9EE4-4C58926E251A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85D633E-6FE7-4C2D-92F9-962BC440100B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85D633E-6FE7-4C2D-92F9-962BC440100B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85D633E-6FE7-4C2D-92F9-962BC440100B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85D633E-6FE7-4C2D-92F9-962BC440100B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

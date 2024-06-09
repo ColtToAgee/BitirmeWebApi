@@ -161,19 +161,53 @@ namespace BitirmeWebApi.Controllers
             return doctorListData;
         }
 
-        [HttpGet(Name = "RunConsoleApp")]
+        [HttpGet(Name = "RunMedicanaHospitalWorker")]
         [Route("[action]")]
         [Authorize]
-        public void RunConsoleApp()
+        public void RunMedicanaHospitalWorker()
         {
             Process process = new Process();
             process.StartInfo.FileName = "cmd";
-            process.StartInfo.FileName = "cmd";
-            process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\TasarimProjesi\DenemeSelenium\bin\Debug";
+            process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\BitirmeWebApi\MedicanaHospitalWorker\bin\Debug\net7.0";
 
-            process.StartInfo.Arguments = "/c \"" + "DenemeSelenium.exe" + "\"";
+            process.StartInfo.Arguments = "/c \"" + "MedicanaHospitalWorker.exe" + "\"";
             process.Start();
         }
+        [HttpGet(Name = "RunHayatHospitalWorker")]
+        [Route("[action]")]
+        [Authorize]
+        public void RunHayatHospitalWorker()
+        {
+            HayatHospitalWorker.Program deneme = new HayatHospitalWorker.Program();
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd";
+            process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\BitirmeWebApi\HayatHospitalWorker\bin\Debug\net7.0";
 
+            process.StartInfo.Arguments = "/c \"" + "HayatHospitalWorker.exe" + "\"";
+            process.Start();
+        }
+        [HttpGet(Name = "RunAcibademHospitalWorker")]
+        [Route("[action]")]
+        [Authorize]
+        public void RunAcibademHospitalWorker()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd";
+            process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\BitirmeWebApi\AcibademHospitalWorker\bin\Debug\net7.0";
+
+            process.StartInfo.Arguments = "/c \"" + "AcibademHospitalWorker.exe" + "\"";
+            process.Start();
+        }
+        [HttpGet(Name = "RunDenemeConsole")]
+        [Route("[action]")]
+        [Authorize]
+        public void RunDenemeConsole()
+        {
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\BitirmeWebApi\DenemeConsole\bin\Debug\net7.0";
+            process.StartInfo.Arguments = "/c \"" + "DenemeConsole.exe" + "\" " + "https://www.ozelhayathastanesi.com.tr/doktorlarimiz";
+            process.Start();
+        }
     }
 }
