@@ -11,5 +11,6 @@ namespace BitirmeEntity.Models
         public bool AuthenticateResult { get; set; }
         public string AuthToken { get; set; }
         public DateTime AccessTokenExpireDate { get; set; }
+        public string UserName { get; set; }
     }
 }

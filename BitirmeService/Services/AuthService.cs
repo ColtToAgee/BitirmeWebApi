@@ -36,6 +36,7 @@ namespace BitirmeService.Services
                 response.AuthenticateResult = true;
                 response.AuthToken = generatedTokenInformation.Token;
                 response.AccessTokenExpireDate = generatedTokenInformation.TokenExpireDate;
+                response.UserName = request.Username;
             }
             else
             {

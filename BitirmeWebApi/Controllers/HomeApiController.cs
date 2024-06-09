@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using BitirmeService.Services;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Authorization;
+using BitirmeEntity.Models;
 
 namespace BitirmeWebApi.Controllers
 {
@@ -161,6 +162,24 @@ namespace BitirmeWebApi.Controllers
             return doctorListData;
         }
 
+        [HttpPost()]
+        [Route("[action]")]
+        [Authorize]
+        public void UpdateDoctor([FromBody] DoctorProfilesViewModel model)
+        {
+            using (var db = new DbService())
+            {
+                var dbModel = db.FirstOrDefault<DoctorProfiles>($"{nameof(DoctorProfiles.Id)}={model.Id}");
+                dbModel.DoctorEmail = model.DoctorEmail;
+                dbModel.DoctorPoliclinic = model.DoctorPoliclinic;
+                dbModel.DoctorImageLink = model.DoctorImageLink;
+                dbModel.DoctorName = model.DoctorName;
+                dbModel.DoctorHospital = model.DoctorHospital;
+                dbModel.DoctorTitle = model.DoctorTitle;
+                db.AddOrUpdateEntity<DoctorProfiles>(dbModel);
+            }
+        }
+
         [HttpGet(Name = "RunMedicanaHospitalWorker")]
         [Route("[action]")]
         [Authorize]
@@ -206,7 +225,8 @@ namespace BitirmeWebApi.Controllers
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.WorkingDirectory = @"C:\Users\Cagat\source\repos\BitirmeWebApi\DenemeConsole\bin\Debug\net7.0";
-            process.StartInfo.Arguments = "/c \"" + "DenemeConsole.exe" + "\" " + "https://www.ozelhayathastanesi.com.tr/doktorlarimiz";
+            process.StartInfo.ArgumentList.Add("/c DenemeConsole.exe");
+            process.StartInfo.ArgumentList.Add("https://stackoverflow.com/questions/1012409/system-diagnostics-process-arguments");
             process.Start();
         }
     }
